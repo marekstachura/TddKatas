@@ -13,7 +13,9 @@ namespace TddKatas
 			if (string.IsNullOrEmpty (numbers))
 				return 0;
 
-			return numbers.Length;
+      int result;
+      int.TryParse(numbers, out result);
+      return result;
 		}
 	}
 }
