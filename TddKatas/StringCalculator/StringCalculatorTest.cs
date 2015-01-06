@@ -12,18 +12,32 @@ namespace TddKatas
       Assert.AreEqual(0, calculator.Add(string.Empty));
     }
 
-    [Test()]
+    [Test]
     public void Add_Should_Return_Correct_Sum_For_One_Number()
     {
       var calculator = new StringCalculator();
       Assert.AreEqual(9, calculator.Add("9"));
     }
 
-    [Test()]
+    [Test]
     public void Add_Should_Return_Correct_Sum_For_Two_Numbers()
     {
       var calculator = new StringCalculator();
       Assert.AreEqual(15, calculator.Add("7,8"));
+    }
+
+    [Test]
+    public void Add_Should_Return_Correct_Sum_For_Unknown_Amount_Of_Numbers()
+    {
+      var calculator = new StringCalculator();
+      Assert.AreEqual(19, calculator.Add("7,8,1,3"));
+    }
+
+    [Test]
+    public void Add_Should_Support_New_Lines_Between_Numbers()
+    {
+      var calculator = new StringCalculator();
+      Assert.AreEqual(19, calculator.Add("7\n8,1\n3"));
     }
   }
 }

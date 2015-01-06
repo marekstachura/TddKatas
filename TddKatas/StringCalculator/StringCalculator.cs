@@ -14,7 +14,7 @@ namespace TddKatas
       if(string.IsNullOrEmpty(numbers))
         return 0;
 
-      var numbersList = numbers.Split(',').ToList().Select(x => int.Parse(x));
+      var numbersList = numbers.Split(new char[] { ',', '\n' }).ToList().Select(x => int.Parse(x));
       return numbersList.Sum();
     }
   }
