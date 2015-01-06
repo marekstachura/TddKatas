@@ -34,10 +34,17 @@ namespace TddKatas
     }
 
     [Test]
-    public void Add_Should_Support_New_Lines_Between_Numbers()
+    public void Add_Should_Support_New_Lines_And_Commas_As_Delimeters()
     {
       var calculator = new StringCalculator();
       Assert.AreEqual(19, calculator.Add("7\n8,1\n3"));
+    }
+
+    [Test]
+    public void Add_Should_Support_Provided_Delimeter()
+    {
+      var calculator = new StringCalculator();
+      Assert.AreEqual(19, calculator.Add("//;\n7;8;1;3"));
     }
   }
 }
