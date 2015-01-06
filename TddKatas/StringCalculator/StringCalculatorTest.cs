@@ -6,17 +6,24 @@ namespace TddKatas
   public class StringCalculatorTest
   {
     [Test]
-    public void Add_Should_Return_Zero_For_Empty_String ()
+    public void Add_Should_Return_Zero_For_Empty_String()
     {
-      var calculator = new StringCalculator ();
-      Assert.AreEqual (0, calculator.Add (string.Empty));
+      var calculator = new StringCalculator();
+      Assert.AreEqual(0, calculator.Add(string.Empty));
     }
 
-    [Test ()]
-    public void Add_Should_Return_Correct_Sum_For_One_Number ()
+    [Test()]
+    public void Add_Should_Return_Correct_Sum_For_One_Number()
     {
-      var calculator = new StringCalculator ();
-      Assert.AreEqual (9, calculator.Add ("9"));
+      var calculator = new StringCalculator();
+      Assert.AreEqual(9, calculator.Add("9"));
+    }
+
+    [Test()]
+    public void Add_Should_Return_Correct_Sum_For_Two_Numbers()
+    {
+      var calculator = new StringCalculator();
+      Assert.AreEqual(15, calculator.Add("7,8"));
     }
   }
 }

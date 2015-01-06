@@ -1,22 +1,21 @@
 ﻿using System;
+using System.Linq;
 
 namespace TddKatas
 {
-	public class StringCalculator
-	{
-		public StringCalculator ()
-		{
-		}
+  public class StringCalculator
+  {
+    public StringCalculator()
+    {
+    }
 
-		public int Add(string numbers)
-		{
-			if (string.IsNullOrEmpty (numbers))
-				return 0;
+    public int Add(string numbers)
+    {
+      if(string.IsNullOrEmpty(numbers))
+        return 0;
 
-      int result;
-      int.TryParse(numbers, out result);
-      return result;
-		}
-	}
+      var numbersList = numbers.Split(',').ToList().Select(x => int.Parse(x));
+      return numbersList.Sum();
+    }
+  }
 }
-
